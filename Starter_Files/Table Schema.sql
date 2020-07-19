@@ -45,9 +45,28 @@ CREATE TABLE Transaction_List(
 );
 
 SELECT
-	card_no
+	ch_id,card_no
 FROM
 	creditcard
 WHERE
 	ch_id = 2 OR
 	ch_id = 18;
+
+
+SELECT
+	trans_date,
+	amount,
+	card_no(transaction_list),
+	merchant_id
+FROM
+	transaction_list
+WHERE
+	card_no IN (
+		SELECT
+			card_no
+		FROM
+			creditcard
+		WHERE
+			ch_id = 2 OR
+		    ch_id=18
+	);
