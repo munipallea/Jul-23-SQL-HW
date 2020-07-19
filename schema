@@ -1,0 +1,36 @@
+# Modify this code to update the DB schema diagram.
+# To reset the sample schema, replace everything with
+# two dots ('..' - without quotes).
+
+CardHolder
+-
+CH_ID PK int
+CH_Name VARCHAR(50)
+
+
+CreditCard
+-
+Card_NO PK BIGINT
+CH_ID int FK >- CardHolder.CH_ID
+
+
+Merchant
+-
+Merchant_ID PK int
+Merchant_Name string
+Merchant_ID_Category int FK >- MerchantCategory.Merchant_ID_Category
+
+
+MerchantCategory
+-
+Merchant_ID_Category PK int
+MerchantCategory_Name string
+
+
+Transaction_List
+-
+Trans_ID PK
+Trans_DATE DATE
+AMOUNT BIGINT
+CARD_NO BIGINT FK >- CreditCard.Card_NO
+Merchant_ID int FK >- Merchant.Merchant_ID
