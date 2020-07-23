@@ -124,3 +124,5 @@ CREATE VIEW chid_small_transactions AS
 		card_small_transactions
 	LEFT JOIN creditcard USING (card_no)
 	ORDER BY card_small_transactions.small_trans DESC;
+	
+SELECT * from merchant
