@@ -30,7 +30,7 @@ MerchantCategory_Name string
 Transaction_List
 -
 Trans_ID PK
-Trans_DATE DATE
+Trans_DATE DATETIME
 AMOUNT BIGINT
 CARD_NO BIGINT FK >- CreditCard.Card_NO
 Merchant_ID int FK >- Merchant.Merchant_ID
